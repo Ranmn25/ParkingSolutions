@@ -9,7 +9,7 @@
 puts "Cleaning database..."
 ParkingSpot.destroy_all
 
-puts "Creating movies..."
+puts "Creating parking..."
 parking1 = { title: "Wonderful parkingspot", user_id: 1 }
 parking2 = { title: "Fantastic parkingspot", user_id: 1 }
 parking3 = { title: "Perfect parkingspot", user_id: 1 }
