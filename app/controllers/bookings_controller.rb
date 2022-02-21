@@ -9,8 +9,11 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
-    @booking.save
-    redirect_to booking_path(@booking)
+    if @booking.save
+      redirect_to booking_path(@booking), notice: 'Booked successfully.'
+    else
+      render :new
+    end
   end
 
   def destroy
