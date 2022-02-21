@@ -13,9 +13,19 @@ class BookingsController < ApplicationController
     redirect_to booking_path(@booking)
   end
 
+  def destroy
+    find_booking
+    @booking.destroy
+    redirect_to parking_path
+  end
+
   private
 
   def booking_params
-    params.require(:booking).permit(:date, :time, :status, :total_price)
+    params.require(:booking).permit(:date, :time, :status)
+  end
+
+  def find_booking
+    @booking = Booking.find(params[])
   end
 end
