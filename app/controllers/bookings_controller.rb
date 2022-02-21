@@ -5,6 +5,7 @@ class BookingsController < ApplicationController
 
   def new
     @booking = Booking.new
+    @parking_spot = ParkingSpot.find(params[:parking_spot_id])
   end
 
   def create
@@ -25,7 +26,7 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:date, :time, :status)
+    params.require(:booking).permit(:date, :time)
   end
 
   def find_booking
