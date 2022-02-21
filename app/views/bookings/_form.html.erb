@@ -1,5 +1,5 @@
 <%= simple_form_for [@parking_spot, @booking] do |f| %>
   <%= f.input :duration %>
-  <%= f.datetime :time %>
+  <%= f.datetime_field :time %>
   <%= f.button :submit %>
 <% end %>

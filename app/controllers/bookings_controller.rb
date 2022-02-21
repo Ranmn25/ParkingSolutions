@@ -1,6 +1,7 @@
 class BookingsController < ApplicationController
+  before_action :find_booking, only: [:show]
+
   def show
-    @booking = Booking.find(params[])
   end
 
   def new
@@ -10,6 +11,8 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
+    @booking.parking_spot = ParkingSpot.find(params[:parking_spot_id])
+    @booking.user = current_user
     if @booking.save
       redirect_to booking_path(@booking), notice: 'Booked successfully.'
     else
@@ -30,6 +33,6 @@ class BookingsController < ApplicationController
   end
 
   def find_booking
-    @booking = Booking.find(params[])
+    @booking = Booking.find(params[:id])
   end
 end
