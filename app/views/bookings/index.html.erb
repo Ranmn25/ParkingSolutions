@@ -1,0 +1,17 @@
+<h1>Bookings</h1>
+<% @applied_bookings.each do |booking| %>
+  <%= booking.time %>
+  <%= booking.parking_spot.title %>
+<% end %>
+
+<h1>Received Bookings</h1>
+<% @received_bookings.each do |booking| %>
+  <%= booking.time %></li>
+  <%= booking.parking_spot.title %></li>
+  <% if booking.status == 'pending' %>
+    <%= link_to 'accept', booking_path(booking, {status: 'accepted'}), method: :patch %>
+    <%= link_to 'decline', booking_path(booking, {status: 'declined'}), method: :patch %>
+  <% else %>
+    <%= booking.status %>
+  <% end %>
+<% end  %></ul>
