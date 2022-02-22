@@ -45,6 +45,6 @@ class ParkingSpotsController < ApplicationController
   private
 
   def parking_params
-    params.require(:parking_spot).permit(:title, :address, :description, :price_per_hour)
+    params.require(:parking_spot).permit(:title, :address, :description, :price_per_hour, :photo)
   end
 end

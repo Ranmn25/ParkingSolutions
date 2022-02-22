@@ -3,4 +3,7 @@
 <%= link_to "Back to overview", parking_spots_path %>
 <%if @parking_spot.user == current_user %>
 <%= link_to 'Delete', parking_spot_path(@parking_spot), method: :delete, data: {confirm: "Are you sure?"} %>
+<% if @parking_spot.photo.attached? %>
+<%= cl_image_tag @parking_spot.photo.key, height: 300, width: 400, crop: :fill %>
+<% end %>
 <% end %>
