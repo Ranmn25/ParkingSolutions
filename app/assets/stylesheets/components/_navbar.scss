@@ -47,3 +47,40 @@ ul{
   height: 100px;
   object-fit: cover;
 }
+a {
+  background-color: transparent;
+  cursor: pointer;
+  line-height: inherit;
+  text-decoration: none;
+
+}
+.bt--primary, .bt-primary, .c-button--primary.bt-primary {
+  background-color: #e60a0a;
+  background-position: 1em 50%;
+  background-repeat: no-repeat;
+  border: 0 #000000;
+  border-radius: 4px;
+  color: #fff;
+  cursor: pointer;
+  display: block;
+  font-size: 13px;
+  line-height: 3;
+  transition: background-color .2s linear;
+  width: 100%;
+  padding: 15px 40px;
+  height: fit-content;
+
+
+}
+#sign_up{
+  border: 1px solid #e60a0a;
+  padding: 15px;
+
+}
+.bt--primary > a {
+  color: #ffffff;
+  font-size: 15px;
+}
+#sign_up {
+  color: #737272;
+}

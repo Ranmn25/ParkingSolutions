@@ -1,15 +1,36 @@
 <div class="navbar">
 <div class="navbar-content">
+   <div style="display:flex; align-items:center;">
   <ul>
     <li> <%= image_tag "logo1.png", id: "logo"%></li>
-
   </ul>
+
+    <button type="button" class="bt--primary">
+      <%= link_to "FIND A PARKING SPACE",  parking_spots_path %>
+    </div>
 <ul>
-  <li>HOME</li>
+  <li>HOW IT WORKS</li>
   <li>ABOUT</li>
   <li>SERVICES</li>
   <li>CONTACT US</li>
-  <li>HAPPY CLIENTS</li>
+   <li></li>
+  <% if !user_signed_in? %>
+    <li>
+     <%= link_to "LOGIN", new_user_session_path, class: "heder_login-link", id: "sign_up"%>
+    </li>
+    <li>
+    <%= link_to "SIGNUP", new_user_registration_path, class: "heder_login-link", id: "sign_up"%>
+
+    </li>
+      <% else %>
+<li>
+    <%= link_to "LOGOUT",  destroy_user_session_path, :method => :delete, class: "heder_login-link", id: "sign_up"%>
+
+
+    </li>
+  <% end %>
+
 </ul>
 </div>
 </div>
+<%# new_parking_spot_path %>
