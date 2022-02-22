@@ -1,5 +1,14 @@
 <h1>Our Parking-Spots</h1>
 
-<ul><% @parking_spots.each do |parking| %>
-  <li><%= parking.title %><%= link_to "Show", parking %></li>
-<% end %></ul>
+<% @parking_spots.each do |parking| %>
+  <div class='card-park'>
+    <img src='' alt='parking-image'>
+      <div class='card-park-infos'>
+        <div>
+          <h2><%= parking.title %></h2>
+          <p><%= parking.description %></p>
+        </div>
+      <span class='card-park-pricing'>The hourly rate is <%= parking.price_per_hour %> </span>
+    </div>
+  </div>
+<% end %>
