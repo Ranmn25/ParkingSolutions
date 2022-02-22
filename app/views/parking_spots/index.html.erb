@@ -1,14 +1,16 @@
 <h1>Our Parking-Spots</h1>
 
-<% @parking_spots.each do |parking| %>
-  <div class='card-park'>
-    <img src='' alt='parking-image'>
-      <div class='card-park-infos'>
-        <div>
-          <h2><%= parking.title %></h2>
-          <p><%= parking.description %></p>
-        </div>
-      <span class='card-park-pricing'>The hourly rate is <%= parking.price_per_hour %> </span>
+<div class='card-wrapper'>
+  <% @parking_spots.each do |parking| %>
+    <div class='card-park'>
+      <img src='https://media.istockphoto.com/photos/blank-sign-for-parking-place-revised-picture-id1306035095?s=612x612' alt='parking-image'>
+        <div class='card-park-infos'>
+          <div>
+            <h2><%= link_to parking.title, parking_spot_path(parking) %></h2>
+            <p><%= parking.description %></p>
+          </div>
+      </div>
+        <span class='card-park-pricing'><%= parking.price_per_hour %> </span>
     </div>
-  </div>
-<% end %>
+  <% end %>
+</div>
