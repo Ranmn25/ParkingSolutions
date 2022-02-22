@@ -3,9 +3,24 @@ body {
   margin-bottom: 400 px;
 }
 
+.wrapper {
+  position: relative;
+}
+
+.booking {
+  position: absolute;
+  top: 450px;
+  left: 50px;
+}
+
+.renting {
+  position: absolute;
+  top: 450px;
+}
+
 .container {
   margin: 0 auto;
-  width: 800 px;
+  width: 800px;
   text-align: center;
   justify-content: center;
 }
