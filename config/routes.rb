@@ -5,5 +5,5 @@ Rails.application.routes.draw do
   resources :parking_spots do
     resources :bookings, only: [:new, :create]
   end
-  resources :bookings, only: [:delete, :update, :show]
+  resources :bookings, only: [:delete, :update, :show, :index]
 end
