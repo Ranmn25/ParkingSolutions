@@ -8,6 +8,7 @@
 require "open-uri"
 
 puts "Cleaning database..."
+Booking.destroy_all
 ParkingSpot.destroy_all
 User.destroy_all
 

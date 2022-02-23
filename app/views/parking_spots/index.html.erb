@@ -5,7 +5,9 @@
     <% @parking_spots.each do |parking| %>
       <div class="card">
         <div class="card__image-holder">
-          <%= cl_image_tag parking.photo.key, class: "card__image" %>
+          <% if parking.photo.attached? %>
+            <%= cl_image_tag parking.photo.key, class: "card__image" %>
+          <% end %>
         </div>
         <div class="card-title">
           <a href="#">
