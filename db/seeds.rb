@@ -14,15 +14,20 @@ User.destroy_all
 
 user = User.create!(email: "modeoasis1@gmail.com", password: "123456")
 puts "Creating parking spots..."
-parking1 = { title: "Wonderful parkingspot", user: user }
-parking2 = { title: "Fantastic parkingspot", user: user }
-parking3 = { title: "Perfect parkingspot", user: user }
-parking4 = { title: "Amazing parkingspot", user: user }
+parking1 = { title: "Wonderful parkingspot", address: "Tel Aviv", description: "This is a wonderful parking space", price_per_hour: 10, user: user }
+parking2 = { title: "Fantastic parkingspot", address: "Berlin", description: "This is a fantastic parking space", price_per_hour: 8, user: user }
+parking3 = { title: "Perfect parkingspot", address: "Haifa", description: "This is a perfect parking space", price_per_hour: 6, user: user }
+parking4 = { title: "Amazing parkingspot", address: "Jerusalem", description: "This is an amazing parking space", price_per_hour: 7, user: user }
 
 parking_spot1 = ParkingSpot.create!(parking1)
 parking_spot2 = ParkingSpot.create!(parking2)
 parking_spot3 = ParkingSpot.create!(parking3)
 parking_spot4 = ParkingSpot.create!(parking4)
+
+puts "#{parking_spot1.title} created"
+puts "#{parking_spot2.title} created"
+puts "#{parking_spot3.title} created"
+puts "#{parking_spot4.title} created"
 
 file1 = URI.open('https://images.unsplash.com/photo-1522318548694-a0b65c40b0c6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NjV8fHBhcmtpbmclMjBzcGFjZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60')
 file2 = URI.open('https://images.unsplash.com/photo-1577059023365-cb3d8a8e1e9c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDF8fHBhcmtpbmclMjBzcGFjZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60')
