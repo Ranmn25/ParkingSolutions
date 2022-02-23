@@ -11,26 +11,29 @@
 //   background-color: #f8f8f8;
 //   border-color: #e7e7e7;
 // }
-.navbar{
+.navbar {
   background: #fff;
   border: none;
   width: 100%;
-
 }
 
-.navbar-content{
+.navbar-content {
   justify-content: space-between;
   display: flex;
   font-size: 20px;
   width: 100%;
   align-items: center;
   padding: 0px 65px;
-  font-family: 'Raleway', sans-serif;
+  font-family: "Raleway", sans-serif;
   color: #737272;
   line-height: 24px;
   letter-spacing: 1.2px;
-
+  text-shadow: #000000;
 }
+// .navbar-content :hover{
+//   color: #e60a0a;
+
+// }
 
 
 li {
@@ -38,11 +41,11 @@ li {
   margin: 15px;
 }
 
-ul{
+ul {
   margin-right: 55px;
 }
 
-#logo{
+#logo {
   width: 100px;
   height: 100px;
   object-fit: cover;
@@ -52,9 +55,10 @@ a {
   cursor: pointer;
   line-height: inherit;
   text-decoration: none;
-
 }
-.bt--primary, .bt-primary, .c-button--primary.bt-primary {
+.bt--primary,
+.bt-primary,
+.c-button--primary.bt-primary {
   background-color: #e60a0a;
   background-position: 1em 50%;
   background-repeat: no-repeat;
@@ -65,22 +69,22 @@ a {
   display: block;
   font-size: 13px;
   line-height: 3;
-  transition: background-color .2s linear;
+  transition: background-color 0.2s linear;
   width: 100%;
   padding: 15px 40px;
   height: fit-content;
-
-
 }
-#sign_up{
+
+#sign_up {
   border: 1px solid #e60a0a;
   padding: 15px;
-
 }
+
 .bt--primary > a {
   color: #ffffff;
   font-size: 15px;
 }
+
 #sign_up {
   color: #737272;
 }

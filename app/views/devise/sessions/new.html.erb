@@ -18,3 +18,29 @@
 <% end %>
 
 <%= render "devise/shared/links" %>
+
+<%# login form %>
+<div class="container">
+  <div class="col-sm-4 col-sm-offset-4">
+    <form>
+ <%= image_tag("logo1.png", :alt => "logo") %>
+      <div class="form-group">
+        <label>Username</label>
+        <input type="text" class="login-from-input">
+      </div>
+      <div class="form-group">
+        <div>
+          <label>Password</label>
+        </div>
+        <input type="password" class="login-from-input password-input">
+      </div>
+      <div class="form-group">
+        <input type="submit" class="login-btn" />
+      </div>
+      <div class="form-group form-footer">
+        <p>Dont have an account? <a href="" title="">Create Account</a></p>
+        <p><a href="" title="">Forgot Password?</a></p>
+      </div>
+    </form>
+  </div>
+</div>
