@@ -1,6 +1,14 @@
 class ParkingSpotsController < ApplicationController
   def index
     @parking_spots = ParkingSpot.all
+
+    @markers = @parking_spots.geocoded.map do |parking|
+      {
+        lat: parking.latitude,
+        lng: parking.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { parking: parking })
+      }
+    end
   end
 
   def show
