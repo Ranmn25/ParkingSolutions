@@ -7,6 +7,9 @@ a {
 }
 .form-footer {
   text-align: center;
+  p {
+    margin: 0;
+  }
 }
 
 .login-from-input {
@@ -67,4 +70,8 @@ select:focus {
   justify-content: center;
   display: flex;
   padding: 20px;
+}
+
+.existing-account{
+  margin: 5px;
 }
