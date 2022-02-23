@@ -1,21 +1,37 @@
 <h1>Our Parking-Spots</h1>
 
 <div class='card-wrapper'>
-  <% @parking_spots.each do |parking| %>
-    <div class='card-park'>
-      <img src='https://media.istockphoto.com/photos/blank-sign-for-parking-place-revised-picture-id1306035095?s=612x612' alt='parking-image'>
-        <div class='card-park-infos'>
-          <div>
-            <h2><%= link_to parking.title, parking_spot_path(parking) %></h2>
-            <p><%= parking.description %></p>
+  <div class="cards">
+    <% @parking_spots.each do |parking| %>
+      <div class="card">
+        <div class="card__image-holder">
+          <%= cl_image_tag parking.photo.key, class: "card__image" %>
+        </div>
+        <div class="card-title">
+          <a href="#">
+            <span class="left"></span>
+            <span class="right"></span>
+          </a>
+          <h2><%= parking.title %></h2>
+        </div>
+        <div class="card-flap flap1">
+          <div class="card-description">
+            This grid is an attempt to make something nice that works on touch devices. Ignoring hover states when they're not available etc.
           </div>
+          <div class="card-flap flap2">
+            <div class="card-actions">
+              <a href="#" class="btn"> BOOK NOW</a>
+            </div>
+          </div>
+        </div>
       </div>
-        <span class='card-park-pricing'><%= parking.price_per_hour %> </span>
-    </div>
-  <% end %>
+
+    <% end %>
+  </div>
 </div>
 
 <div style="width: 100%; height: 600px;"
   data-controller="mapbox"
   data-mapbox-markers-value="<%= @markers.to_json %>"
-  data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+  data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
