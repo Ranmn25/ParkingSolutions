@@ -19,6 +19,7 @@ class BookingsController < ApplicationController
     @booking.parking_spot = ParkingSpot.find(params[:parking_spot_id])
     @booking.user = current_user
     @booking.status = 'pending'
+
     if @booking.save
       redirect_to booking_path(@booking), notice: 'Booked successfully.'
     else
@@ -41,7 +42,7 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:date, :time)
+    params.require(:booking).permit(:date, :time, :duration, :message)
   end
 
   def find_booking

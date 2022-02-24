@@ -1,4 +1,5 @@
 class ParkingSpotsController < ApplicationController
+  skip_before_action :authenticate_user!, only: :index
   def index
     if params[:query].present?
       @parking_spots = ParkingSpot.search_by_title_and_address(params[:query])
@@ -18,6 +19,12 @@ class ParkingSpotsController < ApplicationController
   def show
     @parking_spot = ParkingSpot.find(params[:id])
     @booking = Booking.new
+
+    @markers = [{
+      lat: @parking_spot.latitude,
+      lng: @parking_spot.longitude,
+      info_window: render_to_string(partial: "info_window", locals: { parking: @parking_spot })
+      }]
   end
 
   def new

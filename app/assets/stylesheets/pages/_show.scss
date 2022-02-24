@@ -1,0 +1,45 @@
+.showcontainer {
+  width: 85vw;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.showheader {
+  font-family: "Raleway", sans-serif;
+  font-size: 43px;
+  font-weight: 400;
+  letter-spacing: 8px;
+  margin-top: 0px;
+  margin-bottom: 15px;
+}
+
+.showdescription {
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+p.button {
+  margin-right: 0px;
+  margin-bottom: 25px;
+}
+
+.showaddress {
+  margin-bottom: 35px;
+}
+
+.showflex {
+  display: flex;
+  margin-bottom: 35px;
+}
+
+.showinfo {
+  border: solid 1px #A9A9A9;
+  padding: 20px;
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
