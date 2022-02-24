@@ -1,7 +1,11 @@
 class ParkingSpotsController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
   def index
-    @parking_spots = ParkingSpot.all
+    if params[:query].present?
+      @parking_spots = ParkingSpot.search_by_title_and_address(params[:query])
+    else
+      @parking_spots = ParkingSpot.all
+    end
 
     @markers = @parking_spots.geocoded.map do |parking|
       {
@@ -50,6 +54,9 @@ class ParkingSpotsController < ApplicationController
     @parking_spot = ParkingSpot.find(params[:id])
     @parking_spot.destroy
     redirect_to parking_spots_path, notice: "Your parking_spot has been deleted"
+  end
+
+  def search
   end
 
   private

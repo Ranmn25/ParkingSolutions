@@ -2,32 +2,24 @@
 <div class="navbar-content">
    <div style="display:flex; align-items:center;">
   <ul>
-    <li> <%= image_tag "logo1.png", id: "logo"%></li>
+    <li>
+      <%= link_to root_path do %>
+        <%= image_tag "logo1.png", id: "logo"%>
+      <% end %>
+    </li>
   </ul>
 
     <button type="button" class="bt--primary">
       <%= link_to "FIND A PARKING SPACE",  parking_spots_path %>
     </div>
 <ul>
-  <li>FIND A SPOT</li>
-  <li>UPLOAD A SPOT</li>
-   <li></li>
   <% if !user_signed_in? %>
-    <li>
-     <%= link_to "LOGIN", new_user_session_path, class: "heder_login-link", id: "sign_up"%>
-    </li>
-    <li>
-    <%= link_to "SIGNUP", new_user_registration_path, class: "heder_login-link", id: "sign_up"%>
-
-    </li>
-      <% else %>
-<li>
-    <%= link_to "LOGOUT",  destroy_user_session_path, :method => :delete, class: "heder_login-link", id: "sign_up"%>
-
-
-    </li>
-  <% end %>
-
+      <li><%= link_to "LOGIN", new_user_session_path, class: "heder_login-link", id: "sign_up"%></li>
+      <li><%= link_to "SIGNUP", new_user_registration_path, class: "heder_login-link", id: "sign_up"%></li>
+    <% else %>
+      <li class="button-nav"><span><%= link_to "My bookings", bookings_path %></li>
+      <li><%= link_to "LOGOUT",  destroy_user_session_path, :method => :delete, class: "heder_login-link", id: "sign_up"%></li>
+    <% end %>
 </ul>
 </div>
 </div>
