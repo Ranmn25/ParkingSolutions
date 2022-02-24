@@ -5,12 +5,12 @@
 
 <%= link_to "Back to overview", parking_spots_path %>
 <%if @parking_spot.user == current_user %>
-<%= link_to 'Delete', parking_spot_path(@parking_spot), method: :delete, data: {confirm: "Are you sure?"} %>
-
+  <%= link_to 'Delete', parking_spot_path(@parking_spot), method: :delete, data: {confirm: "Are you sure?"} %>
+<% end %>
 <%= simple_form_for [@parking_spot, @booking] do |f| %>
   <%= f.input :duration %>
   <%= f.datetime_field :time %>
   <%= f.button :submit %>
-<% end %>
+
 
 <% end %>

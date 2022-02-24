@@ -1,8 +1,12 @@
+<div class='book-div'>
 <h1>Bookings</h1>
-<% @applied_bookings.each do |booking| %>
-  <%= booking.time %>
-  <%= booking.parking_spot.title %>
-<% end %>
+  <span>
+    <% @applied_bookings.each do |booking| %>
+      <%= booking.time %>
+      <%= booking.parking_spot.title %>
+    <% end %>
+  </span>
+</div>
 
 <h1>Received Bookings</h1>
 <% @received_bookings.each do |booking| %>
