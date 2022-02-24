@@ -1,34 +1,45 @@
 <h1>Our Parking-Spots</h1>
 
-<div class='card-wrapper'>
-  <div class="cards">
-    <% @parking_spots.each do |parking| %>
-      <div class="card">
-        <div class="card__image-holder">
-          <% if parking.photo.attached? %>
-            <%= cl_image_tag parking.photo.key, class: "card__image" %>
-          <% end %>
-        </div>
-        <div class="card-title">
-          <a href="#">
-            <span class="left"></span>
-            <span class="right"></span>
-          </a>
-          <h2><%= parking.title %></h2>
-        </div>
-        <div class="card-flap flap1">
-          <div class="card-description">
-            This grid is an attempt to make something nice that works on touch devices. Ignoring hover states when they're not available etc.
+<div>
+  <%= form_tag parking_spots_path, method: :get do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "Find where to park"
+        %>
+        <%= submit_tag "Search", class: "btn btn-primary" %>
+
+        <% end %>
+  <div class='card-wrapper'>
+    <div class="cards">
+      <% @parking_spots.each do |parking| %>
+        <div class="card">
+          <div class="card__image-holder">
+            <% if parking.photo.attached? %>
+              <%= cl_image_tag parking.photo.key, class: "card__image" %>
+            <% end %>
           </div>
-          <div class="card-flap flap2">
-            <div class="card-actions">
-              <a href="#" class="btn"> BOOK NOW</a>
+          <div class="card-title">
+            <a href="#">
+              <span class="left"></span>
+              <span class="right"></span>
+            </a>
+            <h2><%= parking.title %></h2>
+          </div>
+          <div class="card-flap flap1">
+            <div class="card-description">
+              This grid is an attempt to make something nice that works on touch devices. Ignoring hover states when they're not available etc.
+            </div>
+            <div class="card-flap flap2">
+              <div class="card-actions">
+                <a href="#" class="btn"> BOOK NOW</a>
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
-    <% end %>
+      <% end %>
+    </div>
   </div>
 </div>
 
