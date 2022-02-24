@@ -1,16 +1,38 @@
-<h1><%= @parking_spot.title %></h1>
-<h3><%= @parking_spot.description %></h3>
+<div class="showcontainer">
+  <h1 class="showheader"><%= @parking_spot.title %></h1>
+  <p class="showaddress"><%= @parking_spot.address %></p>
 
-<%= cl_image_tag @parking_spot.photo.key, height: 300, width: 400, crop: :fill %>
+  <div class="showflex">
+    <div class="showimage">
+      <%= cl_image_tag @parking_spot.photo.key, height: 450, width: 500, crop: :fill %>
+    </div>
+    <div class="showinfo">
+      <p><%= @parking_spot.price_per_hour %>€/hour</p>
+      <p class="showdescription"><%= @parking_spot.description %></p>
+      <div class="showbuttons">
+        <p class="button"><%= link_to "Book now", new_parking_spot_booking_path(@parking_spot) %></p>
+        <p><%= link_to "Back to overview", parking_spots_path %></p>
+      </div>
+    </div>
+  </div>
 
-<%= link_to "Back to overview", parking_spots_path %>
-<%if @parking_spot.user == current_user %>
-<%= link_to 'Delete', parking_spot_path(@parking_spot), method: :delete, data: {confirm: "Are you sure?"} %>
+  <%if @parking_spot.user == current_user %>
+    <%= link_to 'Delete', parking_spot_path(@parking_spot), method: :delete, data: {confirm: "Are you sure?"} %>
 
-<%= simple_form_for [@parking_spot, @booking] do |f| %>
-  <%= f.input :duration %>
-  <%= f.datetime_field :time %>
-  <%= f.button :submit %>
-<% end %>
+    <%= simple_form_for [@parking_spot, @booking] do |f| %>
+      <%= f.input :duration %>
+      <%= f.datetime_field :time %>
+      <%= f.button :submit %>
+    <% end %>
 
-<% end %>
+  <% end %>
+
+  <h2>Where you'll be:</h2>
+  <p class="showaddress"><%= @parking_spot.address %></p>
+
+  <div style="width: 100%; height: 600px;"
+    data-controller="mapbox"
+    data-mapbox-markers-value="<%= @markers.to_json %>"
+    data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
+</div>
