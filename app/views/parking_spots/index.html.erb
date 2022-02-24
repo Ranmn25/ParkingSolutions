@@ -19,6 +19,11 @@
               <%= cl_image_tag parking.photo.key, class: "card__image" %>
             <% end %>
           </div>
+
+        
+        
+            <%= link_to "BOOK NOW", parking_spot_path(parking), class:"btn" %>
+
           <div class="card-title">
             <a href="#">
               <span class="left"></span>
@@ -34,9 +39,10 @@
               <div class="card-actions">
                 <a href="#" class="btn"> BOOK NOW</a>
               </div>
+
             </div>
           </div>
-        </div>
+
 
       <% end %>
     </div>
