@@ -57,6 +57,9 @@ class ParkingSpotsController < ApplicationController
     redirect_to parking_spots_path, notice: "Your parking_spot has been deleted"
   end
 
+  def search
+  end
+
   private
 
   def parking_params
