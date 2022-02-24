@@ -1,4 +1,28 @@
-<h1>Your booking</h1>
-
-<p><%= @booking.time %></p>
-<p><%= @booking.parking_spot.title %></p>
+<div class="row justify-content-center card-container">
+  <div class="col-md-6">
+    <div>
+      <div class="mb-5">
+        <div class="row">
+          <h1 class="content-form">Your Booking</h1>
+            <div class="col-md-12 form-group content">
+              <p><%= @booking.time %></p>
+              <p><%= @booking.parking_spot.title %></p>
+          </div>
+          <div class="row">
+            <div class="col-md-12 form-group">
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <span class="submitting"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="form-message-warning mt-4"></div>
+  </div>
+  <div class="col-md-6 booking-image">
+    <p><%= image_tag("booking", :alt => "booking") %></p>
+  </div>
+</div>
