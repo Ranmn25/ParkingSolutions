@@ -1,6 +1,7 @@
 <div class="showcontainer">
   <h1 class="showheader"><%= @parking_spot.title %></h1>
-  <p class="showaddress"><%= @parking_spot.address %></p>
+  <p class="showaddress"><i class="fa-solid fa-location-dot"></i><%= @parking_spot.address %></p>
+  <i class="fa-regular fa-alicorn"></i>
 
   <div class="showflex">
     <div class="showimage">
@@ -16,16 +17,15 @@
     </div>
   </div>
 
-  <%if @parking_spot.user == current_user %>
-    <%= link_to 'Delete', parking_spot_path(@parking_spot), method: :delete, data: {confirm: "Are you sure?"} %>
-
-    <%= simple_form_for [@parking_spot, @booking] do |f| %>
-      <%= f.input :duration %>
-      <%= f.datetime_field :time %>
-      <%= f.button :submit %>
-    <% end %>
-
-  <% end %>
+<%= link_to "Back to overview", parking_spots_path %>
+<%if @parking_spot.user == current_user %>
+  <%= link_to 'Delete', parking_spot_path(@parking_spot), method: :delete, data: {confirm: "Are you sure?"} %>
+<% end %>
+<%= simple_form_for [@parking_spot, @booking] do |f| %>
+  <%= f.input :duration %>
+  <%= f.datetime_field :time %>
+  <%= f.button :submit %>
+<% end %>
 
   <h2>Where you'll be:</h2>
   <p class="showaddress"><%= @parking_spot.address %></p>
