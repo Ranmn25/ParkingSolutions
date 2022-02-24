@@ -1,0 +1,17 @@
+.bookingscontainer {
+  width: 85vw;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.bookingsinfo {
+  border: solid 1px #A9A9A9;
+  padding: 20px;
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
