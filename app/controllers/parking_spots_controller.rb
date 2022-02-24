@@ -1,6 +1,10 @@
 class ParkingSpotsController < ApplicationController
   def index
-    @parking_spots = ParkingSpot.all
+    if params[:query].present?
+      @parking_spots = ParkingSpot.search_by_title_and_address(params[:query])
+    else
+      @parking_spots = ParkingSpot.all
+    end
 
     @markers = @parking_spots.geocoded.map do |parking|
       {
